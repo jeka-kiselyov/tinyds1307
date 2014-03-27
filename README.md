@@ -3,6 +3,8 @@ tinyds1307
 
 Lite library for the ATtiny85 on Arduino for DS1307. With RAM support.
 
+*Treat DS1307's SRAM as EEPROM, because it's battery backed.*
+
 #### License ####
 The MIT License (MIT)
 
