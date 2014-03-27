@@ -19,7 +19,7 @@ The MIT License (MIT)
 #### Setup ####
 *   ATtiny Pin 5 = SDA 
 *   ATtiny Pin 7 = SCL
-#####Note:#####
+
 It's important to use pullups on SDA & SCL. 4k7 resistors from SDA to VCC and from SCL to VCC are good. (anything from 1k to 10k is good).
 
 #### Usage ####
