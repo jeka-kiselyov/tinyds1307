@@ -1,7 +1,7 @@
 tinyds1307
 ==========
 
-Library for the ATtiny85 on Arduino for DS1307. With RAM support.
+Lite library for the ATtiny85 on Arduino for DS1307. With RAM support.
 
 #### License ####
 The MIT License (MIT)
