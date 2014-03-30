@@ -34,7 +34,7 @@ bool TINYDS1307::adjust(unsigned short year, unsigned char month, unsigned char 
         year -= 2000;
     TinyWireM.beginTransmission(DS1307_ADDRESS);
     TinyWireM.send(0);
-    TinyWireM.send(bin2bcd(sec));
+    TinyWireM.send(bin2bcd(sec) | 0x80); // stop the clock
     TinyWireM.send(bin2bcd(min));
     TinyWireM.send(bin2bcd(hour));
     TinyWireM.send(bin2bcd(0));
@@ -45,6 +45,14 @@ bool TINYDS1307::adjust(unsigned short year, unsigned char month, unsigned char 
     
     if (TinyWireM.endTransmission() != 0)
 	return false;
+
+    TinyWireM.beginTransmission(DS1307_ADDRESS);
+    TinyWireM.send(0);
+    TinyWireM.send(bin2bcd(sec) & 0x7F); // start the clock
+
+    if (TinyWireM.endTransmission() != 0)
+	return false;
+
     return true;
 }
 
